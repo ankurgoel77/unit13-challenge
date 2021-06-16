@@ -98,6 +98,35 @@ def recommend_portfolio(intent_request):
         # for the first violation detected.
 
         ### YOUR DATA VALIDATION CODE STARTS HERE ###
+        slots = get_slots(intent_request)
+        validation_result = None
+        # check for None values first, and then if age is right range
+        if age is not None: 
+            if parse_int(age) < 0 or parse_int(age) > 65:
+                validation_result = build_validation_result(False, 
+                                                        "age", 
+                                                        "Your age should be greater than 0 and less than 65, "
+                                                        "Please provide an age between 0 and 65.")
+        if investment_amount is not None:
+            if parse_int(investment_amount) < 5000:
+                validation_result = build_validation_result(False, 
+                                                        "investmentAmount", 
+                                                        "Your investment amount needs to be more than $5000, "
+                                                        "Please provide an amount larger than $5000.")
+        if validation_result is None:
+            validation_result = build_validation_result(True, None, None)
+        
+        if not validation_result["isValid"]:
+            slots[validation_result["violatedSlot"]] = None # Cleans invalid slot
+            
+            # Returns an elicitSlot dialog to request new data for the invalid slot
+            return elicit_slot(
+                intent_request["sessionAttributes"],
+                intent_request["currentIntent"]["name"],
+                slots,
+                validation_result["violatedSlot"],
+                validation_result["message"],
+            )
 
         ### YOUR DATA VALIDATION CODE ENDS HERE ###
 
@@ -109,6 +138,14 @@ def recommend_portfolio(intent_request):
     # Get the initial investment recommendation
 
     ### YOUR FINAL INVESTMENT RECOMMENDATION CODE STARTS HERE ###
+    if risk_level.lower() == "none":
+        initial_recommendation = "100% bonds (AGG), 0% equities (SPY)"
+    elif risk_level.lower() == "low":
+        initial_recommendation = "60% bonds (AGG), 40% equities (SPY)"
+    elif risk_level.lower() == "medium":
+        initial_recommendation = "40% bonds (AGG), 60% equities (SPY)"
+    elif risk_level.lower() == "high":
+        initial_recommendation = "20% bonds (AGG), 80% equities (SPY)"
 
     ### YOUR FINAL INVESTMENT RECOMMENDATION CODE ENDS HERE ###
 
