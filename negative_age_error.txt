@@ -1,0 +1,30 @@
+Test Event Name
+NegativeAgeError
+
+Response
+{
+  "sessionAttributes": {},
+  "dialogAction": {
+    "type": "ElicitSlot",
+    "intentName": "RecommendPortfolio",
+    "slots": {
+      "firstName": "John",
+      "age": "-2",
+      "riskLevel": "Low",
+      "investmentAmount": null
+    },
+    "slotToElicit": "investmentAmount",
+    "message": {
+      "contentType": "PlainText",
+      "content": "Your investment amount needs to be more than $5000, Please provide an amount larger than $5000."
+    }
+  }
+}
+
+Function Logs
+START RequestId: b7eba612-2962-4cdc-b208-e44e49a509f5 Version: $LATEST
+END RequestId: b7eba612-2962-4cdc-b208-e44e49a509f5
+REPORT RequestId: b7eba612-2962-4cdc-b208-e44e49a509f5	Duration: 1.39 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 48 MB
+
+Request ID
+b7eba612-2962-4cdc-b208-e44e49a509f5

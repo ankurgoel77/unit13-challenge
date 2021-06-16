@@ -1,0 +1,24 @@
+Test Event Name
+correctdialog
+
+Response
+{
+  "sessionAttributes": {},
+  "dialogAction": {
+    "type": "Delegate",
+    "slots": {
+      "firstName": "John",
+      "age": "40",
+      "riskLevel": "Low",
+      "investmentAmount": "5000"
+    }
+  }
+}
+
+Function Logs
+START RequestId: 0ff361b2-0bbd-4216-9efe-b488bafffd5e Version: $LATEST
+END RequestId: 0ff361b2-0bbd-4216-9efe-b488bafffd5e
+REPORT RequestId: 0ff361b2-0bbd-4216-9efe-b488bafffd5e	Duration: 1.27 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 48 MB
+
+Request ID
+0ff361b2-0bbd-4216-9efe-b488bafffd5e

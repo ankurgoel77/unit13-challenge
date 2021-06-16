@@ -1,0 +1,30 @@
+Test Event Name
+ageerror
+
+Response
+{
+  "sessionAttributes": {},
+  "dialogAction": {
+    "type": "ElicitSlot",
+    "intentName": "RecommendPortfolio",
+    "slots": {
+      "firstName": "John",
+      "age": null,
+      "riskLevel": "Low",
+      "investmentAmount": "5000"
+    },
+    "slotToElicit": "age",
+    "message": {
+      "contentType": "PlainText",
+      "content": "Your age should be greater than 0 and less than 65, Please provide an age between 0 and 65."
+    }
+  }
+}
+
+Function Logs
+START RequestId: 490ac351-6225-42f7-b21c-3dce5a5cc895 Version: $LATEST
+END RequestId: 490ac351-6225-42f7-b21c-3dce5a5cc895
+REPORT RequestId: 490ac351-6225-42f7-b21c-3dce5a5cc895	Duration: 1.51 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 47 MB	Init Duration: 113.51 ms
+
+Request ID
+490ac351-6225-42f7-b21c-3dce5a5cc895

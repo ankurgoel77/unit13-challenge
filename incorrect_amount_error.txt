@@ -1,0 +1,30 @@
+Test Event Name
+incorrectamounterror
+
+Response
+{
+  "sessionAttributes": {},
+  "dialogAction": {
+    "type": "ElicitSlot",
+    "intentName": "RecommendPortfolio",
+    "slots": {
+      "firstName": "John",
+      "age": "20",
+      "riskLevel": "Low",
+      "investmentAmount": null
+    },
+    "slotToElicit": "investmentAmount",
+    "message": {
+      "contentType": "PlainText",
+      "content": "Your investment amount needs to be more than $5000, Please provide an amount larger than $5000."
+    }
+  }
+}
+
+Function Logs
+START RequestId: f0abac39-e410-4f77-a067-8b66685756b3 Version: $LATEST
+END RequestId: f0abac39-e410-4f77-a067-8b66685756b3
+REPORT RequestId: f0abac39-e410-4f77-a067-8b66685756b3	Duration: 1.24 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 48 MB
+
+Request ID
+f0abac39-e410-4f77-a067-8b66685756b3
